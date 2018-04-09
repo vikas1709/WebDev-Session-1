@@ -75,3 +75,45 @@ nav a {
 img {
     width: 100%;
 }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+}
+
+nav li {
+    flex: 1;
+    text-align: center;
+}
+body.fixed-nav nav {
+    position: fixed;
+    top: 0;
+    box-shadow:0 5px 3px rgba(0,0,0,0.1);
+    width: 100%;
+    z-index: 1;
+    transform: scale(0.98);
+    transition: transform 0.5s;
+  } 
+body.fixed-nav .site-wrap {
+    transform: scale(1);
+  } 
+
+  li.logo img {
+    padding-top: 0.25rem;
+    width: 2.5rem;
+  }
+  
+  li.logo {
+    max-width:0;
+    overflow: hidden;
+    background: white;
+    transition: all 0.5s;
+    font-weight: 600;
+    font-size: 30px;
+  }
+ .fixed-nav li.logo {
+    max-width:500px;
+  }

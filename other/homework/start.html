@@ -19,7 +19,7 @@
     }
     
     .site-nav ul {
-      list-style: none;
+      list-style: none; 
       display: flex;
       margin: 0;
       padding: 0;
@@ -37,7 +37,7 @@
       letter-spacing: 3px;
       padding: 10px;
     }
-    
+
     a {
       text-transform: uppercase;
       text-decoration: none;
@@ -65,9 +65,24 @@
       margin-left: 10px;
       text-transform: uppercase;
     }
+
+    body.fixed-nav header{
+    position: fixed;
+    top: 0;
+    box-shadow:0 5px 3px rgba(0,0,0,0.1);
+    width: 100%; 
+    z-index: 1;
+    transform: scale(0.98);
+    transition: transform 0.5s;
+  } 
+ 
+  body.fixed-nav .site-wrap {
+    transform: scale(1);
+  } 
+
     /* make sure you check the below out by making your browser narrow */
     
-    @media (max-width: 600px) {
+     @media (max-width: 600px) {
       .site-header {
         flex-wrap: wrap;
       }
@@ -76,23 +91,24 @@
         background: #333;
         width: 100%;
       }
-    }
+    } 
   </style>
 </head>
 
 <body>
 
   <header class="site-header">
-
     <i class="fa fa-bullseye fa-3x"></i>
-    <a href="#0" class="logo">Eats</a>
+    <a href="#0" class="logo"> 
+    </a>
 
-    <nav class="site-nav">
-      <ul>
-        <li class="active"><a href="#0">Recipes</a></li>
+    <nav class="site-nav" >
+       <ul>
+      <!--  <li class="active"><a href="#0">Recipes</a></li>
         <li><a href="#0">Reviews</a></li>
-        <li><a href="#0">Delivery</a></li>
-      </ul>
+    --> 
+      </ul> 
+    
     </nav>
 
     <div class="account-actions">
@@ -111,25 +127,35 @@
   </header>
 
   <div class="site-wrap">
-    <h4>Homework</h4>
+      <h2>Download Our New App</h2>
 
-    <p>Note - this file has the CSS is in place - you need to add the JS on your own! The instructions below come from today's work on the Basic DOM scripting page. You should attempt each one if possible. Be sure to review the HTML and CSS before starting</p>
-
-    <ol>
-      <li>Create an object with a new set of labels and links for the site-nav li's above and use the JavaScript techniques we
-        covered today to dynamically generate the nav menu</li>
-
-      <li>Use classList to assign the active class to a link when clicked (be sure to remove it from the previously highlighted
-        link as well)</li>
-
-      <li>Add some paragraphs to the page and make the navigation sticky. Make sure you look at it on both a wide browser and
-        narrow.
-      </li>
-    </ol>
-
-    <p>Post your efforts to the class Slack Channel and a web server (if you don't have I can provide)</p>
-  </div>
+      <p id="recipes"><em>Recipes</em> lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos
+        lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.
+        lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.
+        lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.
+        .</p>
+  
+      <img src="https://picsum.photos/400/200?random" class="align-left slide-in">
+  
+      <p id="reviews"><em>Reviews</em> lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, deserunt facilis et iste corrupti omnis tenetur est. Iste ut est dicta dolor itaque adipisci, dolorum minima, veritatis earum provident error molestias. Ratione magni illo sint vel velit ut excepturi consectetur suscipit, earum modi accusamus voluptatem nostrum, praesentium numquam, reiciendis voluptas sit id quisquam. Consequatur in quis reprehenderit modi perspiciatis necessitatibus saepe, quidem, suscipit iure natus dignissimos ipsam, eligendi deleniti accusantium, rerum quibusdam fugit perferendis et optio recusandae sed ratione. Culpa, dolorum reprehenderit harum ab voluptas fuga, nisi eligendi natus maiores illum quas quos et aperiam aut doloremque optio maxime fugiat doloribus. Eum dolorum expedita quam, nesciunt
+        lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.</p>
+  
+      <img src="https://picsum.photos/400/200?random" class="align-right slide-in">
+  
+      <p id="delivery"><em>Delivery</em>
+        lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.
+        lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.
+        lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos. 
+        lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio maiores adipisci quibusdam repudiandae dolor vero placeat esse sit! Quibusdam saepe aperiam explicabo placeat optio, consequuntur nihil voluptatibus expedita quia vero perferendis, deserunt et incidunt eveniet temporibus doloremque possimus facilis. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi. Asperiores laudantium, rerum ratione consequatur, culpa consectetur possimus atque ab tempore illum non dolor nesciunt. Neque, rerum. A vel non incidunt, quod doloremque dignissimos necessitatibus aliquid laboriosam architecto at cupiditate commodi expedita in, quae blanditiis. Deserunt labore sequi.</p>
+  
+      <img src="https://picsum.photos/400/200?random" class="align-right slide-in">
+  
+      <p id="contactus"><em>Contact Us</em> lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio maiores adipisci quibusdam repudiandae dolor vero placeat esse sit! Quibusdam saepe aperiam explicabo placeat optio, consequuntur nihil voluptatibus expedita quia vero perferendis, deserunt et incidunt eveniet temporibus doloremque possimus facilis. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi. Asperiores laudantium, rerum ratione consequatur, culpa consectetur possimus atque ab tempore illum non dolor nesciunt. Neque, rerum. A vel non incidunt, quod doloremque dignissimos necessitatibus aliquid laboriosam architecto at cupiditate commodi expedita in, quae blanditiis. Deserunt labore sequi, repellat laboriosam est.</p>
+  
+    </div>
+  
 
 </body>
+<script src="navitems.js"></script>
 
 </html>

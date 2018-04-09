@@ -44,12 +44,53 @@ const fakeContent = [
 ]
 
 
-// const inventors = [
-// { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
-// { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
-// { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
-// { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
-// { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
-// { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
-// { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
-// ];
+const nav = document.querySelector('#main');
+nav.innerHTML = "";
+
+ const markup = `<ul>
+                ${navItems.map(navItem => `<li><a href="${navItem.link}">${navItem.label}</a></li>`).join('')}
+                </ul>`;
+
+
+nav.innerHTML = markup;
+
+let topOfNav = nav.offsetTop;
+
+window.addEventListener('scroll',fixNav);
+
+function fixNav(){
+  if(window.scrollY >= topOfNav){
+    document.body.style.paddingTop = nav.offsetHeight + 'px';
+    document.body.classList.add('fixed-nav'); 
+  }
+  else{
+    document.body.classList.remove('fixed-nav');
+    document.body.style.paddingTop = 0;
+  }
+}
+
+const logo = document.querySelector('#main ul li');
+logo.classList.add('logo');
+logo.firstChild.innerHTML = '<img src="img/logo.svg" />';
+
+
+const sitewrap = document.querySelector('.site-wrap');
+const navTest = document.querySelectorAll('#main ul li a');
+for (let i=0; i<navTest.length; i++){
+  navTest[i].addEventListener('click', prepContent)
+}
+
+function prepContent(e){
+  if (this.hash == "#workbook"){
+    console.log('here')
+    const header = fakeContent[0].header;
+    const content = fakeContent[0].content;
+    sitewrap.innerHTML = `
+      <h2>${header}</h2>
+      <p>${content}</p>
+    `;
+    e.preventDefault();
+  }
+}
+
+
